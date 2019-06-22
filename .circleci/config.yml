@@ -3,8 +3,11 @@ jobs:
   build:
     docker:
       - image: python:3.7.3
+    working_directory: ~/repo
     steps:
 
+      - checkout
+      
       - run:
           name: What's in it?
           command: ls -la
