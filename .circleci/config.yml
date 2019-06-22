@@ -16,7 +16,8 @@ jobs:
           name: Trying change directory
           command: |
             cd server/
+            ls -la
             pip install --no-cache-dir -r requirements.txt
-            chmod 777 /usr/src/app/entrypoint.sh
+            chmod 777 entrypoint.sh
             ./uwsgi.ini /etc/uwsgi.ini
             ./entrypoint.sh
