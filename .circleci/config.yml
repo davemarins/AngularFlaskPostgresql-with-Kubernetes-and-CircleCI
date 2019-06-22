@@ -15,8 +15,7 @@ jobs:
 
       - run:
           name: Trying change directory
-          command:  |
-            cd server/
+          command: cd ../server
       
       - run: 
           name: Intalling requirements
