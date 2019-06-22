@@ -9,14 +9,13 @@ jobs:
       - checkout
 
       - run:
-          name: What's in it?
-          command: ls -la
-
+          name: Python Dev
+          command: apt-get install python-dev
+      
       - run:
           name: Trying change directory
           command: |
             cd server/
-            ls -la
             pip install --no-cache-dir -r requirements.txt
             chmod 777 entrypoint.sh
             ./uwsgi.ini /etc/uwsgi.ini
