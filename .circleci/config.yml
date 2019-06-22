@@ -12,7 +12,7 @@ jobs:
           name: Single pass installation
           command: |
             cd server/
-            pip install --no-cache-dir -r requirements.txt
+            pip3 install --no-cache-dir -r requirements.txt
             chmod 777 entrypoint.sh
             # ./uwsgi.ini /etc/uwsgi.ini
             ./entrypoint.sh
