@@ -6,16 +6,8 @@ jobs:
     steps:
 
       - run:
-          name: Where am I=
-          command: pwd
-
-      - run:
-          name: Moving into working directory
-          command: cd server
-      
-      - run:
-          name: Entrypoint permissions
-          command: chmod 777 /usr/src/app/entrypoint.sh
+          name: What's in it?
+          command: ls -la
       
       - run: 
           name: Upgrading PIP
@@ -24,6 +16,10 @@ jobs:
       - run: 
           name: Intalling requirements
           command: pip install --no-cache-dir -r requirements.txt
+
+      - run:
+          name: Entrypoint permissions
+          command: chmod 777 /usr/src/app/entrypoint.sh
       
       - run:
           name: WSGI settings
