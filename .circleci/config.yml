@@ -9,14 +9,10 @@ jobs:
       - checkout
 
       - run:
-          name: Python Dev
-          command: apt-get install python3-pip python3-dev
-      
-      - run:
-          name: Trying change directory
+          name: Single pass installation
           command: |
             cd server/
             pip install --no-cache-dir -r requirements.txt
             chmod 777 entrypoint.sh
-            ./uwsgi.ini /etc/uwsgi.ini
+            # ./uwsgi.ini /etc/uwsgi.ini
             ./entrypoint.sh
