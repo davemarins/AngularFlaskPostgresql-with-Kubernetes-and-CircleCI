@@ -7,7 +7,7 @@ jobs:
     steps:
 
       - checkout
-      
+
       - run:
           name: What's in it?
           command: ls -la
@@ -18,7 +18,7 @@ jobs:
 
       - run:
           name: Trying change directory
-          command: cd ../server
+          command: cd server
       
       - run: 
           name: Intalling requirements
