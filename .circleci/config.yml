@@ -12,10 +12,8 @@ jobs:
           name: Setting environment variable
           command: |
             echo export PYTHONUNBUFFERED=1 >> $BASH_ENV
-      
-      - run:
-          name: Retrieve environment variable
-          command: echo ${PYTHONUNBUFFERED}
+            echo export FLASK_APP=server/main/__init__.py >> $BASH_ENV
+            echo export PYTHONPATH=server >> $BASH_ENV
 
       - run:
           name: Single pass installation
@@ -24,6 +22,7 @@ jobs:
             cd server/
             cp -R . /usr/src/app/
             ls -la /usr/src/app
+            pip3 install --editable .
             pip3 install --no-cache-dir -r requirements.txt
             chmod 777 entrypoint.sh
             cp uwsgi.ini /etc/uwsgi.ini
