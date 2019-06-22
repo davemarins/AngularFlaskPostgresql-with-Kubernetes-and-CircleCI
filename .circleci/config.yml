@@ -8,10 +8,21 @@ jobs:
 
       - checkout
 
+      - run: 
+          name: Setting environment variable
+          command: |
+            echo export PYTHONUNBUFFERED=1 >> $BASH_ENV
+      
+      - run:
+          name: Retrieve environment variable
+          command: echo ${PYTHONUNBUFFERED}
+
       - run:
           name: Single pass installation
           command: |
+            mkdir -p /usr/src/app
             cd server/
+            cp . /usr/src/app/
             pip3 install --no-cache-dir -r requirements.txt
             chmod 777 entrypoint.sh
             cp uwsgi.ini /etc/uwsgi.ini
