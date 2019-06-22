@@ -14,5 +14,5 @@ jobs:
             cd server/
             pip3 install --no-cache-dir -r requirements.txt
             chmod 777 entrypoint.sh
-            ./uwsgi.ini /etc/uwsgi.ini
+            cp uwsgi.ini /etc/uwsgi.ini
             ./entrypoint.sh
