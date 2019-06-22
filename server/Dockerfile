@@ -1,4 +1,4 @@
-FROM python:3.6.2
+FROM python:3.7.3
 
 MAINTAINER Davide Marino "info@davidemarino.io"
 
@@ -16,6 +16,7 @@ COPY . /usr/src/app/
 RUN chmod 777 /usr/src/app/entrypoint.sh
 
 # Install the Python libraries
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # COPY uswgi.ini

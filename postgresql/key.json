@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "davidemarino-net",
+  "private_key_id": "62585f29a664e4133a3fbf542d617399d76bb5a3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDWJKdTNAn0firN\nXYt6pFWvQVkSDVOmnzgvaeW9D7qa62mN7nqPsiPVgSLxPgrhWpR0sDEgUVFshlsp\nqXWwvCJpF+5HosFzC5NNpSjybIX5RtrBMYcgQ6K55Q5HjFs9amXUGqNbR6amCa4T\ngzQRJ5sL53ret0gErhyY+i0hviPDkdP8XBSK9KC28YsPi6BHr7xGw8Q6q8SvlS/v\nkJZcnAOq8ROLBdz+Q+f4pz4pFY+gOULxYnw8h5dSCy4Hy6mmJSg4Bl/kuY7yTrQl\nDLxPm3XZuYJ1TBDY9ylXKvP4C+w4H6bL63QI8tDQlOqvdFngs6Eschc9SvQyy2Es\nSsLdCnChAgMBAAECggEACWq/OPd24JuTwkg01AXaBsT258ZSQWeLDvq3MaM5b4qe\nr7EnDp6k2MS/BqDV1acoFCGTZ3pr/DvEUoazODxtvvVgcyIDI84EgkubC14eXiHx\niMFm0dJnm4kpIZhYgtDk/XjWajMybubKEu2YIpD9Tn61donUzu/hLhECXxN/eyAf\n/F+/rBju/wD/UozBKpnZ4fCifdbJ1SNtdo3jLKGuT/j6HP8k7lgKXYavfXsM5H3w\ne+54vAAqoDt9NLRcHB0SoD5wnauhEwzPOj04eG1nwsO+sVKejZdromj6g8pCA63f\nY+Fx/+HdxtFVqyQU6+KeNitfQgWXO9IEkaU+fkTvKQKBgQDsV417m7X7IkW0FCch\nLSs8ti1rStyL4Ze10QG9QDX9zptnCjkpRaQ6qDtXMdUMmzYpHsoqg7f96mw13Zvj\nh4kySj7aY4l48HTbMIGQpJqvoyaXeCgndEL8W9eW9y108quiN5kKGj0yexpIN6TL\nhowphe+ZzzjpOGKL6oNUh49igwKBgQDn9Gt2Tjxq9dlKUedGfTP6V7EiiE0Hx04U\nJbjMc40F5Dbul8hx21uSht44rA5hTk86WEirwDFA5b7RxjStBztAP8LTfDEV8mfE\nyYLveXLPypqa8xM5JDe1b3UJFQ2Pyw8xXsYT1G2y4Yy2UrQDm2TtXYfe1qIvzg/4\no9xhw3/nCwKBgDkIW70Tc1PaDmYJYvPvmXp6H/W/R/99fgXDHR9VSnIoFHpGDks2\nYg5BoKhG/zmejvBXXMPrq0/b7ScGhmLexy3amtZKpNcJd7mZN/r2rdlqjpqIxW/X\n735Ej37/wPlywhZQQl8cu93dtRbuTpdKrbIrfwln5zzofWd0PSL9340PAoGBAJvG\nZUkdf6vhkd08phKL0RWGQPrNCNZ5fjE/qBz+WS4kttODceUtCRGdq63ptvqYadLo\nKV3XA/zujjk5YHT3j041w/TdyeVQV2osXtfO+1EbYrs/FaDhdtxNjw7babExEPH6\nERKOLmHc4fAsGKL3gE986du4z1FFlSpJeZ7aeZJDAoGBAM4Z361HgQV5OhwZC5Ik\nbrwCOot/G0DGfgCE9X4eL4xAt3o6U+BYntvenlqYIYAkTPjVJHdEn/4Jv0hx0Dt9\nZVnAMjDLyhd0ZIVv/e1bn6TuPn7JJV+b/FFLq5LrIj6FfHyAKuvZMoV2/+Q/P0xP\nrlK1KFFelIhN7yrAfooxh4/K\n-----END PRIVATE KEY-----\n",
+  "client_email": "proxy-user@davidemarino-net.iam.gserviceaccount.com",
+  "client_id": "100752572677251760210",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/proxy-user%40davidemarino-net.iam.gserviceaccount.com"
+}

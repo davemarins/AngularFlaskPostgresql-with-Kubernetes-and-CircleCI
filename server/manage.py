@@ -70,9 +70,9 @@ def recreate_db():
 def seed_db():
     """Seed the user table in test_db database."""
     db.session.add(User(
-        username='sanjiv',
+        username='davidemarino',
         email='info@davidemarino.io',
-        password='sanjiv'
+        password='Davide94!'
     ))
     db.session.add(User(
         username='admin',

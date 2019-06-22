@@ -1,0 +1,7 @@
+Connect to PostgreSQL Cloud SQL Google Cloud Platform
+
+psql "sslmode=verify-ca sslrootcert=server-ca.pem sslcert=client-cert.pem sslkey=client-key.pem hostaddr=35.205.200.41 port=5432 user=postgres dbname=postgres"
+Password for user postgres: bW8lMz23WZixsyZLDvb7IpAetQQf36
+
+./cloud_sql_proxy -instances=davidemarino-net:europe-west1:davidemarino-postgresql=tcp:5432 -credential_file=key.json &
+killall cloud_sql_proxy
