@@ -10,7 +10,7 @@ jobs:
 
       - run:
           name: Python Dev
-          command: apt-get install python-dev
+          command: apt-get install python-pip python-dev libmysqlclient-dev
       
       - run:
           name: Trying change directory
