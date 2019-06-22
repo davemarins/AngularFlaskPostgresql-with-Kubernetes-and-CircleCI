@@ -6,6 +6,10 @@ jobs:
     steps:
 
       - run:
+          name: Where am I=
+          command: pwd
+
+      - run:
           name: Moving into working directory
           command: cd server
       
