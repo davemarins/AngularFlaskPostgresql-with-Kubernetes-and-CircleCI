@@ -14,24 +14,9 @@ jobs:
 
       - run:
           name: Trying change directory
-          command: cd server/
-
-      - run:
-          name: What's in server?
-          command: ls -la
-      
-      - run: 
-          name: Intalling requirements
-          command: pip install --no-cache-dir -r requirements.txt
-
-      - run:
-          name: Entrypoint permissions
-          command: chmod 777 /usr/src/app/entrypoint.sh
-      
-      - run:
-          name: WSGI settings
-          command: ./uwsgi.ini /etc/uwsgi.ini
-
-      - run:
-          name: Entrypoint execution
-          command: ./entrypoint.sh
+          command: |
+            cd server/
+            pip install --no-cache-dir -r requirements.txt
+            chmod 777 /usr/src/app/entrypoint.sh
+            ./uwsgi.ini /etc/uwsgi.ini
+            ./entrypoint.sh
