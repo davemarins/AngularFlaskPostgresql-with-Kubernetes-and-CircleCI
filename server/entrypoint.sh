@@ -17,6 +17,6 @@ done
 echo "PostgreSQL started!"
 
 # Run below commands from manage.py to initialize db and have some default data.
-python manage.py recreate_db
-python manage.py seed_db
+# python manage.py recreate_db
+# python manage.py seed_db
 uwsgi --ini /etc/uwsgi.ini
