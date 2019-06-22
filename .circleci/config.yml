@@ -8,10 +8,15 @@ jobs:
       - run:
           name: What's in it?
           command: ls -la
-      
-      - run: 
-          name: Upgrading PIP
-          command: pip install --upgrade pip
+
+      - run:
+          name: Where am I?
+          command: pwd
+
+      - run:
+          name: Trying change directory
+          command:  |
+            cd server/
       
       - run: 
           name: Intalling requirements
