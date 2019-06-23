@@ -15,8 +15,8 @@ jobs:
             flask_app="$pwd/server/main/"
             pythonpath="$pwd/server/"
             echo export PYTHONUNBUFFERED=1 >> $BASH_ENV
-            echo export FLASK_APP=flask_app >> $BASH_ENV
-            echo export PYTHONPATH=pythonpath >> $BASH_ENV
+            echo export FLASK_APP=$flask_app >> $BASH_ENV
+            echo export PYTHONPATH=$pythonpath >> $BASH_ENV
 
       - run:
           name: Single pass installation
@@ -34,6 +34,7 @@ jobs:
           name: Testing Flask
           command: |
             echo $PYTHONPATH
+            echo $FLASK_APP
             cd server/tests/
             pwd
             python3 base.py
