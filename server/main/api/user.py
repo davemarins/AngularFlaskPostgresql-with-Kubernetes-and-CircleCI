@@ -2,9 +2,8 @@
 """User Route for Demo application."""
 
 from flask import Blueprint
-import sys
-sys.path.append('..')
-from ..main.services.user_service import UserService
+
+from server.main.services.user_service import UserService
 
 route = Blueprint('user', __name__)
 

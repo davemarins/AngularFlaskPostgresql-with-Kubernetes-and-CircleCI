@@ -5,9 +5,8 @@
 
 """
 
-import sys
-sys.path.append('..')
-from .. import create_app
+
+from server.main import create_app
 
 
 def create_app_blueprint(config):

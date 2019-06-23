@@ -1,6 +1,6 @@
 FROM python:3.7.3
 
-MAINTAINER Davide Marino "info@davidemarino.io"
+MAINTAINER Davide Marino 'info@davidemarino.io'
 
 ENV PYTHONUNBUFFERED 1
 
@@ -16,8 +16,8 @@ COPY . /usr/src/app/
 RUN chmod 777 /usr/src/app/entrypoint.sh
 
 # Install the Python libraries
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --upgrade pip
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # COPY uswgi.ini
 COPY ./uwsgi.ini /etc/uwsgi.ini

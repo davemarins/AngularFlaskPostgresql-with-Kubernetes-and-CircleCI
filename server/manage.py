@@ -9,9 +9,9 @@ import unittest
 from coverage import coverage
 from flask_script import Manager
 
-from main import db
-from main.api import create_app_blueprint
-from main.models.user import User
+from server.main import db
+from server.main.api import create_app_blueprint
+from server.main.models.user import User
 
 COV = coverage(
     branch=True,
@@ -70,9 +70,9 @@ def recreate_db():
 def seed_db():
     """Seed the user table in test_db database."""
     db.session.add(User(
-        username='davidemarino',
-        email='info@davidemarino.io',
-        password='Davide94!'
+        username='sanjiv',
+        email='mr.san.kumar@gmail.com',
+        password='sanjiv'
     ))
     db.session.add(User(
         username='admin',

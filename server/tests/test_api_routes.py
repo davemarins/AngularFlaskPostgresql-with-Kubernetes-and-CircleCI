@@ -1,6 +1,6 @@
 """Unittest for testing all routes"""
 import unittest
-from base import BaseTestCase
+from server.tests.base import BaseTestCase
 
 
 class TestRoutes(BaseTestCase):

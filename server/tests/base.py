@@ -1,11 +1,9 @@
 """Base Unit Test Case"""
-import sys
-sys.path.append('..')
 
 import unittest
-from ..main.api import create_app_blueprint
-from ..main import db
-from . import config_name
+from server.main.api import create_app_blueprint
+from server.main import db
+from server.tests import config_name
 
 class BaseTestCase(unittest.TestCase):
     """A base class for test setup"""

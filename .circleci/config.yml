@@ -24,12 +24,15 @@ jobs:
             pip3 install --no-cache-dir -r requirements.txt
             chmod 777 entrypoint.sh
             cp uwsgi.ini /etc/uwsgi.ini
+            echo $PYTHONPATH
             ./entrypoint.sh &
 
       - run:
           name: Testing Flask
           command: |
+            echo $PYTHONPATH
             cd server/tests/
+            pwd
             python3 base.py
             python3 test_api_routes.py
             python3 test_config.py
