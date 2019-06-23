@@ -22,10 +22,10 @@ class BaseTestCase(unittest.TestCase):
         # to use (current_app, g, url_for)
         self.context = app.app_context()
         self.request_context = app.test_request_context()
-        db.create_all()
-        db.session.commit()
+        # db.create_all()
+        # db.session.commit()
 
     def tearDown(self):
         """Called after each test function"""
-        db.session.remove()
-        db.drop_all()
+        # db.session.remove()
+        # db.drop_all()
