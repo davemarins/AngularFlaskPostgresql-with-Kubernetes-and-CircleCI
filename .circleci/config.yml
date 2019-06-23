@@ -5,9 +5,7 @@ jobs:
       - image: python:3.7.3
     working_directory: ~/repo
     steps:
-
       - checkout
-
       - run: 
           name: Setting environment variable
           command: |
@@ -17,7 +15,6 @@ jobs:
             echo export PYTHONUNBUFFERED=1 >> $BASH_ENV
             echo export FLASK_APP=$flask_app >> $BASH_ENV
             echo export PYTHONPATH=$pythonpath >> $BASH_ENV
-
       - run:
           name: Single pass installation
           command: |
@@ -29,7 +26,6 @@ jobs:
             cp uwsgi.ini /etc/uwsgi.ini
             echo $PYTHONPATH
             ./entrypoint.sh &
-
       - run:
           name: Testing Flask
           command: |
@@ -40,3 +36,49 @@ jobs:
             python3 base.py
             python3 test_api_routes.py
             python3 test_config.py
+
+  deploy:
+    docker:
+      - image: google/cloud-sdk
+    environment:
+      - PROJECT_NAME: 'davidemarino'
+      - GOOGLE_PROJECT_ID: 'davidemarino-net'
+      - GOOGLE_COMPUTE_ZONE: 'europe-west1-b'
+      - GOOGLE_CLUSTER_NAME: 'davidemarino'
+    steps:
+      - checkout
+      - run: 
+          name: Setup Google Cloud SDK
+          command: |
+            apt-get install -qq -y gettext
+            echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
+            gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+            gcloud --quiet container clusters get-credentials ${GOOGLE_CLUSTER_NAME}
+      - setup_remote_docker
+      - run:
+          name: Docker build and push
+          command: |
+            docker build --build-arg COMMIT_REF=${CIRCLE_SHA1} --build-arg BUILD_DATE=`date -u +”%Y-%m-%dT%H:%M:%SZ”` -t ${PROJECT_NAME} .
+            docker tag ${PROJECT_NAME} eu.gcr.io/${GOOGLE_PROJECT_ID}/${PROJECT_NAME}:${CIRCLE_SHA1}
+            gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://eu.gcr.io
+            docker push eu.gcr.io/${GOOGLE_PROJECT_ID}/${PROJECT_NAME}:${CIRCLE_SHA1}
+      - run: 
+          name: Deploy to Kubernetes
+          command: |
+            envsubst < ${HOME}/project/k8s.yml > ${HOME}/patched_k8s.yml
+            kubectl apply -f ${HOME}/patched_k8s.yml
+            kubectl rollout status deployment/${PROJECT_NAME}
+
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

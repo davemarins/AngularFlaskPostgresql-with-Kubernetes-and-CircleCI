@@ -2,6 +2,9 @@ FROM python:3.7.3
 
 MAINTAINER Davide Marino 'info@davidemarino.io'
 
+ARG COMMIT_REF
+ARG BUILD_DATE
+
 ENV PYTHONUNBUFFERED 1
 
 RUN mkdir -p /usr/src/app
@@ -21,6 +24,9 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 # COPY uswgi.ini
 COPY ./uwsgi.ini /etc/uwsgi.ini
+
+ENV APP_COMMIT_REF=${COMMIT_REF} \
+    APP_BUILD_DATE=${BUILD_DATE}
 
 EXPOSE 5000
 
