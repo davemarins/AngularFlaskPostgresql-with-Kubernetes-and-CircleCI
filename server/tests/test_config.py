@@ -3,7 +3,8 @@
 
 import unittest
 from flask import current_app
-
+import sys
+sys.path.append('..')
 from ..main.api import create_app_blueprint
 from base import BaseTestCase
 

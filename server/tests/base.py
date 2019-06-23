@@ -1,4 +1,6 @@
 """Base Unit Test Case"""
+import sys
+sys.path.append('..')
 
 import unittest
 from ..main.api import create_app_blueprint

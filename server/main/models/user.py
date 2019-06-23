@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import inspect
-
+import sys
+sys.path.append('..')
 from ..main import db
 from sqlalchemy.sql import func
 

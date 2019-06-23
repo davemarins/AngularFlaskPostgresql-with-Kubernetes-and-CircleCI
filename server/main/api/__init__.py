@@ -5,7 +5,8 @@
 
 """
 
-
+import sys
+sys.path.append('..')
 from .. import create_app
 
 

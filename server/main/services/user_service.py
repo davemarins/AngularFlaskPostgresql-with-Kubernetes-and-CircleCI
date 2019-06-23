@@ -4,7 +4,8 @@
 UserService class - This class holds the method related to User manipulations.
 
 """
-
+import sys
+sys.path.append('..')
 from ..main.models.user import User
 from ..main.services import SQLAlchemyService
 
