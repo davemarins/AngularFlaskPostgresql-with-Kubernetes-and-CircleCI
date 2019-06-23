@@ -21,12 +21,11 @@ class TestDevelopmentConfig(BaseTestCase):
     def test_dev_config(self):
         """Test the config for Development environment"""
         with self.context:
-            message = "Development DEBUG config value should be true instead of " + str(current_app.config['DEBUG'])
+
             self.assertEqual(current_app.config['DEBUG'], True,
-                             msg=message)
-            message = "Development TESTING config value should be false instead of " + str(current_app.config['TESTING'])
+                             msg="Development DEBUG config value should be true")
             self.assertEqual(current_app.config['TESTING'], False,
-                             msg=message)
+                             msg="Development TESTING config value should be false")
 
 class TestTestingConfig(BaseTestCase):
     """Class to test test app configs"""
@@ -41,12 +40,10 @@ class TestTestingConfig(BaseTestCase):
     def test_test_config(self):
         """Test the config for Testing environment"""
         with self.context:
-            message = "Testing DEBUG config value should be false instead of " + str(current_app.config['DEBUG'])
             self.assertEqual(current_app.config['DEBUG'], False,
-                             msg=message)
-            message = "Testing TESTING config value should be true instead of " + str(current_app.config['TESTING'])
+                             msg="Testing DEBUG config value should be false")
             self.assertEqual(current_app.config['TESTING'], True,
-                             msg=message)
+                             msg="Testing TESTING config value should be true")
 
 if __name__ == '__main__':
     unittest.main()
