@@ -3,7 +3,7 @@
 
 from flask import Blueprint
 
-from server.main.services.user_service import UserService
+from ..main.services.user_service import UserService
 
 route = Blueprint('user', __name__)
 

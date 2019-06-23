@@ -9,9 +9,9 @@ import unittest
 from coverage import coverage
 from flask_script import Manager
 
-from server.main import db
-from server.main.api import create_app_blueprint
-from server.main.models.user import User
+from main import db
+from main.api import create_app_blueprint
+from main.models.user import User
 
 COV = coverage(
     branch=True,

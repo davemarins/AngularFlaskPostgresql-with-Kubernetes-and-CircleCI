@@ -6,7 +6,7 @@
 """
 
 
-from server.main import create_app
+from .. import create_app
 
 
 def create_app_blueprint(config):

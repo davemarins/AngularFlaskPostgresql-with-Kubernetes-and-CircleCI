@@ -5,8 +5,8 @@ UserService class - This class holds the method related to User manipulations.
 
 """
 
-from server.main.models.user import User
-from server.main.services import SQLAlchemyService
+from ..main.models.user import User
+from ..main.services import SQLAlchemyService
 
 
 class UserService(SQLAlchemyService):

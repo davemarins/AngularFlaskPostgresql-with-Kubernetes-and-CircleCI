@@ -4,8 +4,8 @@
 import unittest
 from flask import current_app
 
-from server.main.api import create_app_blueprint
-from server.tests.base import BaseTestCase
+from ..main.api import create_app_blueprint
+from base import BaseTestCase
 
 
 class TestDevelopmentConfig(BaseTestCase):

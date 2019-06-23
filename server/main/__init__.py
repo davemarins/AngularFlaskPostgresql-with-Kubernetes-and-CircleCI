@@ -8,8 +8,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-from server.main.utils.common import register_blueprints
-from server.settings import config
+from utils.common import register_blueprints
+from ..settings import config
 
 # instantiate the db
 db = SQLAlchemy()

@@ -2,7 +2,7 @@
 
 from sqlalchemy import inspect
 
-from server.main import db
+from ..main import db
 from sqlalchemy.sql import func
 
 
