@@ -8,10 +8,10 @@ import os
 
 class Config(object):
     """ Common config options """
-    APPNAME = 'Angular_Flask_Docker_Skeleton'
+    APPNAME = 'Angular_Flask_Docker_Kubernetes'
     SUPPORT_EMAIL = 'info@davidemarino.io'
     VERSION = '2.0.1'
-    APPID = 'fl_angular_docker'
+    APPID = 'flask_angular_docker'
     SECRET_KEY = os.urandom(24)
     TESTING = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -29,13 +29,15 @@ class DevelopmentConfig(Config):
     """ Dev environment config options """
     FLASK_ENV='development'
     DEBUG = True
+    TESTING = False
     PROFILE = True
 
 class TestingConfig(Config):
     """ Testing environment config options """
+    FLASK_ENV='testing'
     DEBUG = False
-    STAGING = True
     TESTING = True
+    STAGING = True
 
 
 class ProductionConfig(Config):

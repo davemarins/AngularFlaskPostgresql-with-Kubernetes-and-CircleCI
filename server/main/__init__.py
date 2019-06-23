@@ -22,7 +22,7 @@ def create_app(config_type, package_name, package_path):
     app.config.from_object(app_settings)
 
     # instantiate the db
-    db.init_app(app)
+    # db.init_app(app)
 
     # Access config variables as: app.config['DEBUG']
     # Register all api blueprints found in the application
