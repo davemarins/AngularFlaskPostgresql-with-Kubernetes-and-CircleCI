@@ -16,7 +16,7 @@ jobs:
             echo export FLASK_APP=$flask_app >> $BASH_ENV
             echo export PYTHONPATH=$pythonpath >> $BASH_ENV
       - run:
-          name: Single pass installation
+          name: Installation
           command: |
             mkdir -p /usr/src/app
             cd server/
@@ -24,15 +24,11 @@ jobs:
             pip3 install --no-cache-dir -r requirements.txt
             chmod 777 entrypoint.sh
             cp uwsgi.ini /etc/uwsgi.ini
-            echo $PYTHONPATH
             ./entrypoint.sh &
       - run:
           name: Testing Flask
           command: |
-            echo $PYTHONPATH
-            echo $FLASK_APP
             cd server/tests/
-            pwd
             python3 base.py
             python3 test_api_routes.py
             python3 test_config.py
@@ -60,6 +56,7 @@ jobs:
       - run:
           name: Docker build and push
           command: |
+            cd server/
             docker build --build-arg COMMIT_REF=${CIRCLE_SHA1} --build-arg BUILD_DATE=`date -u +”%Y-%m-%dT%H:%M:%SZ”` -t ${PROJECT_NAME} .
             docker tag ${PROJECT_NAME} eu.gcr.io/${GOOGLE_PROJECT_ID}/${PROJECT_NAME}:${CIRCLE_SHA1}
             gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://eu.gcr.io
@@ -73,7 +70,7 @@ jobs:
 
 workflows:
   version: 2
-  build_test_deploy:
+  build_deploy:
     jobs:
       - build
       - deploy:
