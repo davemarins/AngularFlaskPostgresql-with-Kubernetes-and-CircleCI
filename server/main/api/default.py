@@ -8,7 +8,7 @@ route = Blueprint('default', __name__)
 
 @route.route("/api")
 def hello():
-    return "Hello from Flask using Python 3.6.2!!"
+    return "Hello from Flask using Python 3.7.3!!"
 
 @route.route("/api/ping")
 def ping():
