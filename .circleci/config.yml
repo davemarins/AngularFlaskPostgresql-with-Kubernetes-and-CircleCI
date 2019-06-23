@@ -12,8 +12,8 @@ jobs:
           name: Setting environment variable
           command: |
             pwd=$(pwd)
-            flask_app="$pwd/server/main/"
-            pythonpath="$pwd/server/"
+            flask_app="$pwd/"
+            pythonpath="$pwd/"
             echo export PYTHONUNBUFFERED=1 >> $BASH_ENV
             echo export FLASK_APP=$flask_app >> $BASH_ENV
             echo export PYTHONPATH=$pythonpath >> $BASH_ENV
