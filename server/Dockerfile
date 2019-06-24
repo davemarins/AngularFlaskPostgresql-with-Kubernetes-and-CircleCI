@@ -28,7 +28,8 @@ COPY ./uwsgi.ini /etc/uwsgi.ini
 ENV APP_COMMIT_REF=${COMMIT_REF} \
     APP_BUILD_DATE=${BUILD_DATE}
 
-EXPOSE 5000
+# EXPOSE 5000
+EXPOSE 80
 
 # run server
 CMD ["./entrypoint.sh"]
