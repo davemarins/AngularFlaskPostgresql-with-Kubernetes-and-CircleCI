@@ -5,6 +5,9 @@ from flask import Blueprint, jsonify
 
 route = Blueprint('default', __name__)
 
+@route.route("/")
+def main_page():
+    return "<p>Hello to GCP</p>"
 
 @route.route("/api")
 def hello():
